@@ -12,8 +12,10 @@ import {
   Sparkles,
   Store,
   Users,
+  Wand2,
 } from 'lucide-react'
 import { api, errorMessage } from '@/lib/api'
+import { DEMO_OWNER } from '@/lib/demo-accounts'
 import { landingRouteFor } from '@/lib/navigation'
 import { useAuth } from '@/store/auth'
 import type { DemoAccount } from '@/lib/types'
@@ -45,10 +47,15 @@ export default function LoginPage() {
   useEffect(() => {
     api
       .get<DemoAccount[]>('/auth/demo-accounts')
-      .then(({ data }) => setAccounts(data))
-      .catch(() => setAccounts([]))
+      .then(({ data }) => setAccounts(data.length > 0 ? data : [DEMO_OWNER]))
+      // The owner login is seeded, so it stays offered even if the list call fails.
+      .catch(() => setAccounts([DEMO_OWNER]))
       .finally(() => setLoadingAccounts(false))
   }, [])
+
+  /** The owner card from the server when present, otherwise the seeded copy. */
+  const demoOwner =
+    accounts.find((account) => account.roleCode === DEMO_OWNER.roleCode) ?? DEMO_OWNER
 
   function fill(account: DemoAccount) {
     setEmail(account.email)
@@ -129,9 +136,22 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <p className="relative text-[11px] text-white/40">
-          Spring Boot 3 · PostgreSQL · React · Multi-tenant SaaS architecture
-        </p>
+        <div className="relative space-y-3">
+          <div className="max-w-md rounded-lg border border-white/10 bg-white/5 px-4 py-3">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-primary">
+              Demo login
+            </p>
+            <p className="mt-1 font-mono text-xs text-white/80">
+              {DEMO_OWNER.email} · {DEMO_OWNER.password}
+            </p>
+            <p className="mt-1 text-[11px] text-white/45">
+              Business Owner — or use the one-click buttons on the right.
+            </p>
+          </div>
+          <p className="text-[11px] text-white/40">
+            Spring Boot 3 · PostgreSQL · React · Multi-tenant SaaS architecture
+          </p>
+        </div>
       </div>
 
       {/* Right: sign in. */}
@@ -146,11 +166,57 @@ export default function LoginPage() {
 
           <h2 className="text-2xl font-bold tracking-tight">Sign in</h2>
           <p className="mt-1.5 text-sm text-muted-foreground">
-            Choose a role below to explore the platform, or enter credentials directly.
+            Use the demo credentials below, choose another role, or enter credentials
+            directly.
           </p>
 
+          {/* Test credentials, spelled out: one click to fill, one click to be inside. */}
+          <div className="mt-6 rounded-xl border border-primary/30 bg-primary/5 p-4">
+            <div className="flex items-center gap-2">
+              <Sparkles className="h-4 w-4 shrink-0 text-primary" />
+              <p className="text-sm font-semibold">Demo credentials — Business Owner</p>
+            </div>
+            <dl className="mt-3 space-y-1 text-xs">
+              <div className="flex gap-2">
+                <dt className="w-[68px] shrink-0 text-muted-foreground">Email</dt>
+                <dd className="truncate font-mono font-medium">{demoOwner.email}</dd>
+              </div>
+              <div className="flex gap-2">
+                <dt className="w-[68px] shrink-0 text-muted-foreground">Password</dt>
+                <dd className="truncate font-mono font-medium">{demoOwner.password}</dd>
+              </div>
+            </dl>
+            <div className="mt-3.5 flex flex-wrap gap-2">
+              <Button
+                type="button"
+                size="sm"
+                onClick={(event) => submit(event, demoOwner)}
+                disabled={submitting}
+              >
+                {submitting ? <Loader2 className="animate-spin" /> : <KeyRound />}
+                Sign in as owner
+              </Button>
+              <Button
+                type="button"
+                size="sm"
+                variant="outline"
+                onClick={() => fill(demoOwner)}
+                disabled={submitting}
+              >
+                <Wand2 /> Fill the form
+              </Button>
+            </div>
+            <p className="mt-2.5 text-[11px] text-muted-foreground">
+              Full access to every module — inventory, sales, finance, HR, users and
+              settings.
+            </p>
+          </div>
+
           {/* One-click role entry: the reviewer never has to be handed a password. */}
-          <div className="mt-6 space-y-2">
+          <p className="mt-7 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+            Or enter as another role
+          </p>
+          <div className="mt-2.5 space-y-2">
             {loadingAccounts ? (
               <>
                 <Skeleton className="h-[74px] w-full rounded-xl" />
