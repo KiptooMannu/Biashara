@@ -69,8 +69,8 @@ biashara:
   cors:
     # Comma-separated origin patterns. The deployed frontend lives on a
     # different host to the API, so this has to be set at deploy time —
-    # e.g. BIASHARA_CORS_ORIGINS=https://biashara.onrender.com
-    allowed-origins: ${BIASHARA_CORS_ORIGINS:http://localhost:*,http://127.0.0.1:*}
+    # e.g. BIASHARA_CORS_ORIGINS=https://biashara.vercel.app
+    allowed-origins: ${BIASHARA_CORS_ORIGINS:https://biashara-eight.vercel.app,https://*.vercel.app,http://localhost:*,http://127.0.0.1:*}
 
 springdoc:
   swagger-ui:
