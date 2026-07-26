@@ -3,7 +3,7 @@ import type { ApiErrorBody, LoginResponse } from './types'
 
 const ACCESS_TOKEN_KEY = 'biashara.accessToken'
 const REFRESH_TOKEN_KEY = 'biashara.refreshToken'
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://biashara-zl2z.onrender.com/api'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api'
 
 export const tokenStore = {
   access: () => localStorage.getItem(ACCESS_TOKEN_KEY),
