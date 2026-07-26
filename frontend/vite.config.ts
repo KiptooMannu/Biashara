@@ -13,8 +13,9 @@ export default defineConfig({
     // cookies/CORS never become a problem during the demo.
     proxy: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: 'https://biashara-zl2z.onrender.com',
         changeOrigin: true,
+        secure: true,
       },
     },
   },
