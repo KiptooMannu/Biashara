@@ -2,7 +2,7 @@
 
 # BIASHARA
 
-**AI-powered, multi-tenant ERP for micro, small and medium enterprises.**
+**An AI-powered ERP built for micro, small and medium enterprises. Inventory, sales, CRM, procurement, finance, HR and business intelligence in one platform — with an assistant that explains the numbers instead of just reporting them.**
 
 Inventory · Sales & POS · CRM · Procurement · Finance · Accounting · HR · Assets · Projects · Business Intelligence · AI Assistant
 
