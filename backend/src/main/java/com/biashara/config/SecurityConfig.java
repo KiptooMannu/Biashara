@@ -15,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.util.StringUtils;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -99,12 +100,12 @@ public class SecurityConfig {
      * via {@code BIASHARA_CORS_ORIGINS} rather than compiled in.
      */
     @Value("${biashara.cors.allowed-origins}")
-    private List<String> allowedOrigins;
+    private String allowedOriginsProperty;
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOriginPatterns(allowedOrigins);
+        configuration.setAllowedOriginPatterns(parseAllowedOrigins(allowedOriginsProperty));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
@@ -113,5 +114,18 @@ public class SecurityConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
+    }
+
+    private List<String> parseAllowedOrigins(String allowedOrigins) {
+        if (!StringUtils.hasText(allowedOrigins)) {
+            return List.of(
+                    "https://biashara-eight.vercel.app",
+                    "https://*.vercel.app",
+                    "http://localhost:*",
+                    "http://127.0.0.1:*");
+        }
+        return StringUtils.commaDelimitedListToSet(allowedOrigins).stream()
+                .filter(StringUtils::hasText)
+                .toList();
     }
 }

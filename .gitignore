@@ -11,6 +11,8 @@ backend/data/
 frontend/node_modules/
 frontend/dist/
 frontend/.vite/
+frontend/tsconfig.tsbuildinfo
+frontend/*.log
 
 # Environment & secrets
 .env
