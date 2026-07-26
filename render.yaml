@@ -1,0 +1,56 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+#
+# Deploy with: Render dashboard → New → Blueprint → point at this repository.
+# The four `sync: false` values are prompted for on first deploy and are never
+# committed here.
+
+services:
+  - type: web
+    name: biashara-api
+    runtime: docker
+    plan: free
+    region: oregon
+
+    # Build context is backend/, so the Dockerfile's `COPY pom.xml .` resolves.
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+
+    # Render polls this until it returns 200 before routing traffic to a new
+    # deploy. The data seeder runs as an ApplicationRunner — after the web
+    # server is already listening — so a first boot that seeds does not fail
+    # the check.
+    healthCheckPath: /actuator/health
+
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: neon
+
+      # Neon connection. Keep `sslmode=require&prepareThreshold=0` on the URL:
+      # Neon's pooler caches statement plans across multiplexed connections, and
+      # without prepareThreshold=0 a schema change raises
+      # "cached plan must not change result type".
+      - key: BIASHARA_DB_URL
+        sync: false
+      - key: BIASHARA_DB_USER
+        sync: false
+      - key: BIASHARA_DB_PASSWORD
+        sync: false
+
+      # Generated once by Render and held in the service. Rotating it
+      # invalidates every issued access and refresh token, which is the
+      # intended behaviour.
+      - key: BIASHARA_JWT_SECRET
+        generateValue: true
+
+      # Comma-separated origin patterns for the deployed frontend. Without this
+      # the browser blocks every API call, because the default only allows
+      # localhost.
+      - key: BIASHARA_CORS_ORIGINS
+        sync: false
+
+      # Set to false after the first successful deploy has seeded the database.
+      - key: BIASHARA_SEED_ENABLED
+        value: "true"
+
+      - key: JAVA_OPTS
+        value: "-XX:MaxRAMPercentage=75 -XX:InitialRAMPercentage=40 -XX:+ExitOnOutOfMemoryError"

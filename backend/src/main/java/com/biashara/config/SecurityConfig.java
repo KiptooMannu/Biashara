@@ -3,6 +3,7 @@ package com.biashara.config;
 import com.biashara.iam.security.JwtAuthenticationFilter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -90,12 +91,20 @@ public class SecurityConfig {
                 "message", message));
     }
 
+    /**
+     * Origin patterns allowed to call the API.
+     *
+     * Defaults to the Vite dev server on both loopback spellings. Deployed, the
+     * frontend is on a different host to the API, so this is set per environment
+     * via {@code BIASHARA_CORS_ORIGINS} rather than compiled in.
+     */
+    @Value("${biashara.cors.allowed-origins}")
+    private List<String> allowedOrigins;
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        // Vite dev server, on both loopback spellings.
-        configuration.setAllowedOriginPatterns(List.of(
-                "http://localhost:*", "http://127.0.0.1:*"));
+        configuration.setAllowedOriginPatterns(allowedOrigins);
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);

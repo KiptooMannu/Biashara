@@ -28,9 +28,31 @@ spring:
       write-dates-as-timestamps: false
 
 server:
-  port: 8080
+  # Render (and most PaaS hosts) inject the port to bind on as $PORT and route
+  # public traffic to it. Falls back to 8080 for local runs.
+  port: ${PORT:8080}
   error:
     include-message: always
+  # The platform sits behind a proxy that terminates TLS; without this the app
+  # builds redirect and cookie URLs against http:// and the wrong host.
+  forward-headers-strategy: framework
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # Health only. The rest of actuator is not authenticated here and has no
+        # business being reachable.
+        include: health
+  endpoint:
+    health:
+      show-details: never
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
 
 biashara:
   jwt:
@@ -41,7 +63,14 @@ biashara:
     max-failed-logins: 5
     lockout-minutes: 15
   seed:
-    enabled: true
+    # Set to false once a deployed environment has been seeded, so a restart is
+    # not spent re-walking 27 tables to conclude they are already populated.
+    enabled: ${BIASHARA_SEED_ENABLED:true}
+  cors:
+    # Comma-separated origin patterns. The deployed frontend lives on a
+    # different host to the API, so this has to be set at deploy time —
+    # e.g. BIASHARA_CORS_ORIGINS=https://biashara.onrender.com
+    allowed-origins: ${BIASHARA_CORS_ORIGINS:http://localhost:*,http://127.0.0.1:*}
 
 springdoc:
   swagger-ui:

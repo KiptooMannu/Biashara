@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BIASHARA — 7-Page Pitch Deck</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --surface: #0f172a;
+      --surface-2: #14233b;
+      --text: #f8fafc;
+      --muted: #aebccd;
+      --accent: #10b981;
+      --border: rgba(255,255,255,0.12);
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.55; }
+    .slide { min-height: 100vh; padding: 3.2rem 3.4rem 4rem; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(135deg, rgba(255,255,255,0.02), transparent 60%), var(--surface); }
+    .kicker { text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.74rem; font-weight: 800; color: var(--accent); margin-bottom: 0.75rem; }
+    h1 { font-size: clamp(2.1rem, 4vw, 3rem); margin: 0 0 0.9rem; line-height: 1.1; }
+    h2 { font-size: clamp(1.4rem, 2.7vw, 1.9rem); margin: 0 0 0.8rem; line-height: 1.2; }
+    h3 { font-size: 1rem; margin: 0 0 0.35rem; }
+    p, li { color: var(--muted); font-size: 1rem; }
+    .lede { font-size: 1.06rem; max-width: 70ch; }
+    .grid { display: grid; gap: 1rem; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.1rem; }
+    .pill { display: inline-block; padding: 0.32rem 0.7rem; margin: 0.25rem 0.35rem 0.25rem 0; border-radius: 999px; border: 1px solid var(--border); color: var(--text); font-size: 0.85rem; font-weight: 700; }
+    .pill.accent { background: rgba(16,185,129,0.12); color: var(--accent); border-color: rgba(16,185,129,0.3); }
+    ul.clean { list-style: none; padding: 0; margin: 0; }
+    ul.clean li { position: relative; padding-left: 1rem; margin-bottom: 0.55rem; }
+    ul.clean li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
+    .hero { max-width: 760px; }
+    .quote { border-left: 3px solid var(--accent); padding-left: 1rem; }
+    @media (max-width: 900px) { .slide { padding: 2rem 1.1rem; } .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <section class="slide">
+    <div class="hero">
+      <div class="kicker">BIASHARA</div>
+      <h1>Helping small businesses run better with one connected system.</h1>
+      <p class="lede">MSMEs are the engine of most economies, yet they are often forced to manage sales, stock, customers, payroll and cash flow across disconnected tools. BIASHARA brings those operations into one platform and adds an assistant that tells the owner what is happening and what to do next.</p>
+      <div style="margin-top: 1rem;">
+        <span class="pill accent">90% of businesses</span>
+        <span class="pill accent">50%+ of jobs</span>
+        <span class="pill accent">Trillions financing gap</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Main problem</div>
+    <h2>Small businesses are operating in a gap that existing tools do not fill.</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Fragmented tools</h3>
+        <p>Stock, sales, finance and customers are commonly split across spreadsheets and multiple apps.</p>
+      </div>
+      <div class="card">
+        <h3>Slow decisions</h3>
+        <p>Owners get reports after the fact, but not the insight needed to act in real time.</p>
+      </div>
+      <div class="card">
+        <h3>Hidden losses</h3>
+        <p>Stockouts, late collections and weak inventory decisions quietly erode margin and cash flow.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">What BIASHARA does</div>
+    <h2>One platform for everyday operations.</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Core modules</h3>
+        <ul class="clean">
+          <li>Inventory and stock movement</li>
+          <li>POS and sales workflow</li>
+          <li>CRM and customer tracking</li>
+          <li>Supplier and procurement management</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Business control</h3>
+        <ul class="clean">
+          <li>Finance, expenses and invoicing</li>
+          <li>HR, payroll and leave</li>
+          <li>Audit trail and role-based access</li>
+          <li>Dashboards and business health insights</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Why it matters</div>
+    <h2>It turns operations from reactive to proactive.</h2>
+    <div class="card quote">
+      <p>Instead of asking “what happened?”, the business can ask “why is it happening, what is costing us, and what should we do next?”</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Differentiator</div>
+    <h2>The AI assistant is grounded in live business data.</h2>
+    <div class="card">
+      <p>It classifies the user’s question, runs real queries, and explains the numbers it used. That makes the advice auditable and useful, rather than generic or invented.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Proof</div>
+    <h2>It is already built and exercised against a working system.</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Verified delivery</h3>
+        <ul class="clean">
+          <li>65 of 65 REST endpoints verified</li>
+          <li>27 of 27 tracked tables populated</li>
+          <li>Frontend type checks with zero errors</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Operational proof</h3>
+        <ul class="clean">
+          <li>POS transaction updates stock and ledger together</li>
+          <li>Role restrictions and access control are enforced</li>
+          <li>Audit trail captures actions end to end</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Closing</div>
+    <h2>BIASHARA is a practical operating system for the businesses that keep the economy moving.</h2>
+    <div class="card">
+      <p>It addresses the real pain of fragmented operations, slow decision-making and invisible losses — and it does so with a product that is already credible, usable and ready to expand.</p>
+    </div>
+  </section>
+</body>
+</html>

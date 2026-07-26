@@ -1,0 +1,24 @@
+# Everything the image does not need. Keeping the build context small matters
+# on Render, where the context is uploaded before the build starts.
+
+target/
+*.log
+.mvn/
+mvnw
+mvnw.cmd
+
+.git/
+.gitignore
+.idea/
+.vscode/
+*.iml
+
+# Local database files from the offline profile.
+data/
+*.db
+*.mv.db
+*.trace.db
+
+Dockerfile
+.dockerignore
+README.md
