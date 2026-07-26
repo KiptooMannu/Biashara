@@ -1,0 +1,133 @@
+﻿mvn : WARNING: A restricted method in java.lang.System has been called
+At line:1 char:355
++ ... e\backend'; mvn -B spring-boot:run > 'c:\Users\User\Desktop\Claude\ba ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: A rest...has been called:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: java.lang.System::load has been called by org.fusesource.jansi.internal.JansiLoader in an unnamed module 
+(file:/C:/Users/User/maven/apache-maven-3.9.6/lib/jansi-2.4.0.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by 
+com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper 
+(file:/C:/Users/User/maven/apache-maven-3.9.6/lib/guava-32.0.1-jre.jar)
+WARNING: Please consider reporting this to the maintainers of class 
+com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.biashara:biashara-erp >----------------------
+[INFO] Building biashara-erp 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.5.6:run (default-cli) > test-compile @ biashara-erp >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ biashara-erp ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ biashara-erp ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 163 source files with javac [debug parameters release 21] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ biashara-erp ---
+[INFO] skip non existing resourceDirectory C:\Users\User\Desktop\Claude\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ biashara-erp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.5.6:run (default-cli) < test-compile @ biashara-erp <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.5.6:run (default-cli) @ biashara-erp ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.6)
+
+2026-07-26T02:50:53.814+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.BiasharaApplication         : Starting BiasharaApplication using Java 25.0.2 with PID 7292 (C:\Users\User\Desktop\Claude\backend\target\classes started by User in C:\Users\User\Desktop\Claude\backend)
+2026-07-26T02:50:53.819+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.BiasharaApplication         : The following 1 profile is active: "neon"
+2026-07-26T02:50:56.542+03:00  INFO 7292 --- [biashara-erp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-26T02:50:56.960+03:00  INFO 7292 --- [biashara-erp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 402 ms. Found 37 JPA repository interfaces.
+2026-07-26T02:50:58.541+03:00  INFO 7292 --- [biashara-erp] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-07-26T02:50:58.572+03:00  INFO 7292 --- [biashara-erp] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-26T02:50:58.572+03:00  INFO 7292 --- [biashara-erp] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-07-26T02:50:58.662+03:00  INFO 7292 --- [biashara-erp] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-26T02:50:58.663+03:00  INFO 7292 --- [biashara-erp] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4744 ms
+2026-07-26T02:50:59.020+03:00  INFO 7292 --- [biashara-erp] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-26T02:50:59.120+03:00  INFO 7292 --- [biashara-erp] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-07-26T02:50:59.169+03:00  INFO 7292 --- [biashara-erp] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-26T02:50:59.598+03:00  INFO 7292 --- [biashara-erp] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-26T02:50:59.641+03:00  INFO 7292 --- [biashara-erp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-26T02:51:02.476+03:00  INFO 7292 --- [biashara-erp] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2759749
+2026-07-26T02:51:02.479+03:00  INFO 7292 --- [biashara-erp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-26T02:51:03.768+03:00  INFO 7292 --- [biashara-erp] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-26T02:51:06.957+03:00  INFO 7292 --- [biashara-erp] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-26T02:52:14.331+03:00  INFO 7292 --- [biashara-erp] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-26T02:52:16.205+03:00  INFO 7292 --- [biashara-erp] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-26T02:52:49.583+03:00  WARN 7292 --- [biashara-erp] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: dc271018-b00a-4c1f-b4bc-f27c0613f265
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-07-26T02:52:49.599+03:00  INFO 7292 --- [biashara-erp] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-07-26T02:52:51.869+03:00  INFO 7292 --- [biashara-erp] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-07-26T02:52:51.885+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.BiasharaApplication         : Started BiasharaApplication in 118.919 seconds (process running for 119.598)
+2026-07-26T02:52:52.608+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.DataSeeder             : Demo business 'greenmart' already present — skipping seed.
+2026-07-26T02:52:52.918+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : 
+2026-07-26T02:52:52.919+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : ======================= BIASHARA seeded data =======================
+2026-07-26T02:52:53.202+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Permissions                  63 
+2026-07-26T02:52:53.431+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Roles                        14 
+2026-07-26T02:52:53.663+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Users                        14 
+2026-07-26T02:52:53.888+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Departments                  10 
+2026-07-26T02:52:54.126+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Branches                     10 
+2026-07-26T02:52:54.378+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Warehouses                   10 
+2026-07-26T02:52:54.631+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Categories                   20 
+2026-07-26T02:52:54.857+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Products                     55 
+2026-07-26T02:52:55.101+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Suppliers                    20 
+2026-07-26T02:52:55.390+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Customers                    22 
+2026-07-26T02:52:55.641+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Customer interactions        72 
+2026-07-26T02:52:55.885+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Employees                    22 
+2026-07-26T02:52:56.116+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Sales                      2249 
+2026-07-26T02:52:56.343+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Purchase orders              50 
+2026-07-26T02:52:56.574+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Inventory movements        8052 
+2026-07-26T02:52:56.809+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Expenses                     40 
+2026-07-26T02:52:57.078+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Invoices                     40 
+2026-07-26T02:52:57.313+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Payments                     88 
+2026-07-26T02:52:57.541+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Journal entries              21 
+2026-07-26T02:52:57.767+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Attendance records         1716 
+2026-07-26T02:52:58.004+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Leave requests               16 
+2026-07-26T02:52:58.232+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Payroll records              66 
+2026-07-26T02:52:58.459+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Assets                       16 
+2026-07-26T02:52:58.696+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Projects                     12 
+2026-07-26T02:52:58.931+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Project tasks                18 
+2026-07-26T02:52:59.160+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Notifications                17 
+2026-07-26T02:52:59.391+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   AI insights                  14 
+2026-07-26T02:52:59.391+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : -------------------------------------------------------------------
+2026-07-26T02:52:59.391+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   All 27 tables have at least 10 rows.
+2026-07-26T02:52:59.391+03:00  INFO 7292 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : ===================================================================
+2026-07-26T02:53:59.516+03:00  INFO 7292 --- [biashara-erp] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-26T02:53:59.516+03:00  INFO 7292 --- [biashara-erp] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-26T02:53:59.518+03:00  INFO 7292 --- [biashara-erp] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-07-26T02:54:09.422+03:00  WARN 7292 --- [biashara-erp] [nio-8080-exec-7] ration$PageModule$WarningLoggingModifier : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+

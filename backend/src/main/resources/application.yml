@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: biashara-erp
+
+  # Neon serverless Postgres by default; override with SPRING_PROFILES_ACTIVE=h2
+  # to run fully offline against a local file-backed database.
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:neon}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+        jdbc:
+          batch_size: 100
+        # Grouping inserts by table before flushing is what lets the JDBC driver
+        # actually batch them, rather than interleaving tables and breaking runs.
+        order_inserts: true
+        order_updates: true
+        batch_versioned_data: true
+
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: 8080
+  error:
+    include-message: always
+
+biashara:
+  jwt:
+    secret: ${BIASHARA_JWT_SECRET:b1a5h4r4-d3m0-s3cr3t-k3y-must-be-at-least-64-bytes-long-for-hs512-signing!!}
+    access-token-minutes: 120
+    refresh-token-days: 7
+  security:
+    max-failed-logins: 5
+    lockout-minutes: 15
+  seed:
+    enabled: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: alpha
+    tags-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+
+logging:
+  level:
+    root: INFO
+    com.biashara: INFO
+    org.hibernate.SQL: WARN

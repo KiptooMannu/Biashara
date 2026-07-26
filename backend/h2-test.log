@@ -1,0 +1,471 @@
+﻿mvn : WARNING: A restricted method in java.lang.System has been called
+At line:1 char:355
++ ... e\backend'; mvn -B spring-boot:run "-Dspring-boot.run.profiles=h2" >  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: A rest...has been called:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: java.lang.System::load has been called by org.fusesource.jansi.internal.JansiLoader in an unnamed module 
+(file:/C:/Users/User/maven/apache-maven-3.9.6/lib/jansi-2.4.0.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by 
+com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper 
+(file:/C:/Users/User/maven/apache-maven-3.9.6/lib/guava-32.0.1-jre.jar)
+WARNING: Please consider reporting this to the maintainers of class 
+com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.biashara:biashara-erp >----------------------
+[INFO] Building biashara-erp 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.5.6:run (default-cli) > test-compile @ biashara-erp >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ biashara-erp ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ biashara-erp ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 163 source files with javac [debug parameters release 21] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ biashara-erp ---
+[INFO] skip non existing resourceDirectory C:\Users\User\Desktop\Claude\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ biashara-erp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.5.6:run (default-cli) < test-compile @ biashara-erp <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.5.6:run (default-cli) @ biashara-erp ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.6)
+
+2026-07-26T03:38:11.154+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.BiasharaApplication         : Starting BiasharaApplication using Java 25.0.2 with PID 16776 (C:\Users\User\Desktop\Claude\backend\target\classes started by User in C:\Users\User\Desktop\Claude\backend)
+2026-07-26T03:38:11.158+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.BiasharaApplication         : The following 1 profile is active: "h2"
+2026-07-26T03:38:13.707+03:00  INFO 16776 --- [biashara-erp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-26T03:38:14.675+03:00  INFO 16776 --- [biashara-erp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 950 ms. Found 37 JPA repository interfaces.
+2026-07-26T03:38:16.397+03:00  INFO 16776 --- [biashara-erp] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-07-26T03:38:16.433+03:00  INFO 16776 --- [biashara-erp] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-26T03:38:16.433+03:00  INFO 16776 --- [biashara-erp] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-07-26T03:38:16.664+03:00  INFO 16776 --- [biashara-erp] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-26T03:38:16.666+03:00  INFO 16776 --- [biashara-erp] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5386 ms
+2026-07-26T03:38:17.467+03:00  INFO 16776 --- [biashara-erp] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-26T03:38:17.615+03:00  INFO 16776 --- [biashara-erp] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-07-26T03:38:17.686+03:00  INFO 16776 --- [biashara-erp] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-26T03:38:20.579+03:00  INFO 16776 --- [biashara-erp] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-26T03:38:20.637+03:00  INFO 16776 --- [biashara-erp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-26T03:38:21.067+03:00  INFO 16776 --- [biashara-erp] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:3a04ba80-d9e9-488d-92b3-7d2c25c12ae2 user=SA
+2026-07-26T03:38:21.070+03:00  INFO 16776 --- [biashara-erp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-26T03:38:21.263+03:00  INFO 16776 --- [biashara-erp] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-26T03:38:28.570+03:00  INFO 16776 --- [biashara-erp] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-26T03:38:29.073+03:00  INFO 16776 --- [biashara-erp] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-26T03:38:30.813+03:00  INFO 16776 --- [biashara-erp] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-26T03:38:47.621+03:00  WARN 16776 --- [biashara-erp] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 5ca8c3ef-71f2-49b2-8473-43975d28e36a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-07-26T03:38:47.639+03:00  INFO 16776 --- [biashara-erp] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-07-26T03:38:49.209+03:00  INFO 16776 --- [biashara-erp] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-07-26T03:38:49.232+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.BiasharaApplication         : Started BiasharaApplication in 39.447 seconds (process running for 40.556)
+2026-07-26T03:38:49.559+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.DataSeeder             : Seeding BIASHARA demo data. This runs once.
+2026-07-26T03:38:49.730+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IamSeeder              : Seeded 63 permissions
+2026-07-26T03:38:49.750+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IamSeeder              : Seeded tenant GreenMart Supermarket
+2026-07-26T03:38:49.766+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IamSeeder              : Seeded 10 branches
+2026-07-26T03:38:49.791+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IamSeeder              : Seeded 10 departments
+2026-07-26T03:38:49.843+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IamSeeder              : Seeded 14 roles
+2026-07-26T03:38:52.598+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IamSeeder              : Seeded 13 users
+2026-07-26T03:38:52.621+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IamSeeder              : Seeded 12 user invitations
+2026-07-26T03:38:52.931+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.CatalogueSeeder        : Seeded 20 categories
+2026-07-26T03:38:52.944+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.CatalogueSeeder        : Seeded 10 warehouses
+2026-07-26T03:38:52.966+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.CatalogueSeeder        : Seeded 20 suppliers
+2026-07-26T03:38:53.003+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.CatalogueSeeder        : Seeded 55 products
+2026-07-26T03:38:53.302+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.PartnerSeeder          : Seeded 22 customers
+2026-07-26T03:38:53.333+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.PartnerSeeder          : Seeded 22 employees
+2026-07-26T03:38:55.030+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.OperationsSeeder       : Seeded 2248 sales with 7983 line items over 90 days
+2026-07-26T03:38:55.087+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.OperationsSeeder       : Seeded 50 purchase orders
+2026-07-26T03:38:55.686+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.OperationsSeeder       : Seeded 8051 inventory movements
+2026-07-26T03:38:55.827+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.OperationsSeeder       : Recalculated sales velocity for 55 products
+2026-07-26T03:38:55.863+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.OperationsSeeder       : Scored 22 customers from generated sales history
+2026-07-26T03:38:55.890+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.OperationsSeeder       : Seeded 72 customer interactions
+2026-07-26T03:38:55.905+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.OperationsSeeder       : Seeded 40 invoices
+2026-07-26T03:38:55.930+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.OperationsSeeder       : Seeded 87 payments
+2026-07-26T03:38:55.948+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.OperationsSeeder       : Seeded 40 expenses
+2026-07-26T03:38:56.076+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.OperationsSeeder       : Seeded 1716 attendance records
+2026-07-26T03:38:56.085+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.OperationsSeeder       : Seeded 16 leave requests
+2026-07-26T03:38:56.114+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.OperationsSeeder       : Seeded 66 payroll records
+2026-07-26T03:39:00.510+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IntelligenceSeeder     : Seeded 22 chart-of-accounts entries
+2026-07-26T03:39:00.531+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IntelligenceSeeder     : Seeded 21 journal entries
+2026-07-26T03:39:00.547+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IntelligenceSeeder     : Seeded 16 assets
+2026-07-26T03:39:00.560+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IntelligenceSeeder     : Seeded 12 projects
+2026-07-26T03:39:00.573+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IntelligenceSeeder     : Seeded 18 project tasks
+2026-07-26T03:39:00.937+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IntelligenceSeeder     : Seeded 14 AI insights derived from transaction data
+2026-07-26T03:39:00.944+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.IntelligenceSeeder     : Seeded 17 notifications
+2026-07-26T03:39:00.971+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.DataSeeder             : Seed complete in 11 seconds.
+2026-07-26T03:39:00.987+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : 
+2026-07-26T03:39:00.987+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : ======================= BIASHARA seeded data =======================
+2026-07-26T03:39:00.998+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Permissions                  63 
+2026-07-26T03:39:01.001+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Roles                        14 
+2026-07-26T03:39:01.007+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Users                        13 
+2026-07-26T03:39:01.011+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Departments                  10 
+2026-07-26T03:39:01.014+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Branches                     10 
+2026-07-26T03:39:01.022+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Warehouses                   10 
+2026-07-26T03:39:01.025+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Categories                   20 
+2026-07-26T03:39:01.029+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Products                     55 
+2026-07-26T03:39:01.033+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Suppliers                    20 
+2026-07-26T03:39:01.037+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Customers                    22 
+2026-07-26T03:39:01.040+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Customer interactions        72 
+2026-07-26T03:39:01.044+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Employees                    22 
+2026-07-26T03:39:01.057+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Sales                      2248 
+2026-07-26T03:39:01.060+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Purchase orders              50 
+2026-07-26T03:39:01.095+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Inventory movements        8051 
+2026-07-26T03:39:01.098+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Expenses                     40 
+2026-07-26T03:39:01.102+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Invoices                     40 
+2026-07-26T03:39:01.106+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Payments                     87 
+2026-07-26T03:39:01.111+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Journal entries              21 
+2026-07-26T03:39:01.120+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Attendance records         1716 
+2026-07-26T03:39:01.124+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Leave requests               16 
+2026-07-26T03:39:01.127+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Payroll records              66 
+2026-07-26T03:39:01.131+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Assets                       16 
+2026-07-26T03:39:01.135+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Projects                     12 
+2026-07-26T03:39:01.139+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Project tasks                18 
+2026-07-26T03:39:01.143+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Notifications                17 
+2026-07-26T03:39:01.146+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   AI insights                  14 
+2026-07-26T03:39:01.146+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : -------------------------------------------------------------------
+2026-07-26T03:39:01.146+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   All 27 tables have at least 10 rows.
+2026-07-26T03:39:01.147+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : ===================================================================
+2026-07-26T03:39:01.147+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : 
+2026-07-26T03:39:01.148+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : ========================== Demo logins ============================
+2026-07-26T03:39:01.148+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   owner@biashara.demo            Owner@123      BUSINESS_OWNER
+2026-07-26T03:39:01.148+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   manager@biashara.demo          Manager@123    GENERAL_MANAGER
+2026-07-26T03:39:01.149+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   cashier@biashara.demo          Cashier@123    CASHIER
+2026-07-26T03:39:01.149+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   admin@biashara.demo            Admin@123      BUSINESS_ADMIN
+2026-07-26T03:39:01.149+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   finance@biashara.demo          Finance@123    FINANCE_MANAGER
+2026-07-26T03:39:01.149+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   hr@biashara.demo               HrDemo@123     HR_MANAGER
+2026-07-26T03:39:01.149+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   inventory@biashara.demo        Stock@123      INVENTORY_MANAGER
+2026-07-26T03:39:01.149+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   procurement@biashara.demo      Procure@123    PROCUREMENT_MANAGER
+2026-07-26T03:39:01.149+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   sales@biashara.demo            Sales@123      SALES_MANAGER
+2026-07-26T03:39:01.149+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   accountant@biashara.demo       Accounts@123   ACCOUNTANT
+2026-07-26T03:39:01.149+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   store@biashara.demo            Store@123      STOREKEEPER
+2026-07-26T03:39:01.149+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   superadmin@biashara.demo       Super@123      SUPER_ADMIN
+2026-07-26T03:39:01.150+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   newuser@biashara.demo          Temp@123       HR_OFFICER  (forces password change)
+2026-07-26T03:39:01.150+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : -------------------------------------------------------------------
+2026-07-26T03:39:01.150+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Swagger UI:  http://localhost:8080/swagger-ui.html
+2026-07-26T03:39:01.150+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           :   Frontend:    http://localhost:5173
+2026-07-26T03:39:01.150+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : ===================================================================
+2026-07-26T03:39:01.150+03:00  INFO 16776 --- [biashara-erp] [           main] com.biashara.seed.SeedReporter           : 
+2026-07-26T03:39:15.376+03:00  INFO 16776 --- [biashara-erp] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-26T03:39:15.376+03:00  INFO 16776 --- [biashara-erp] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-26T03:39:15.382+03:00  INFO 16776 --- [biashara-erp] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2026-07-26T03:39:16.809+03:00  WARN 16776 --- [biashara-erp] [nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42001, SQLState: 42001
+2026-07-26T03:39:16.809+03:00 ERROR 16776 --- [biashara-erp] [nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : Syntax error in SQL statement "select to_char(s.sale_date, 'YYYY-MM-DD') as bucket,\000a       sum(s.total) as [*]value,\000a       sum(s.total - coalesce(s.cost_of_goods, 0)) as secondary,\000a       count(*) as count\000afrom sales s\000awhere s.tenant_id = ? and s.deleted = false\000a  and s.status = 'COMPLETED'\000a  and s.sale_date >= ?\000agroup by to_char(s.sale_date, 'YYYY-MM-DD')\000aorder by bucket asc\000a"; expected "identifier"; SQL statement:
+select to_char(s.sale_date, 'YYYY-MM-DD') as bucket,
+       sum(s.total) as value,
+       sum(s.total - coalesce(s.cost_of_goods, 0)) as secondary,
+       count(*) as count
+from sales s
+where s.tenant_id = ? and s.deleted = false
+  and s.status = 'COMPLETED'
+  and s.sale_date >= ?
+group by to_char(s.sale_date, 'YYYY-MM-DD')
+order by bucket asc
+ [42001-232]
+2026-07-26T03:39:16.828+03:00 ERROR 16776 --- [biashara-erp] [nio-8080-exec-2] c.b.common.web.GlobalExceptionHandler    : Unhandled exception
+
+org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement [Syntax error in SQL statement "select to_char(s.sale_date, 'YYYY-MM-DD') as bucket,\000a       sum(s.total) as [*]value,\000a       sum(s.total - coalesce(s.cost_of_goods, 0)) as secondary,\000a       count(*) as count\000afrom sales s\000awhere s.tenant_id = ? and s.deleted = false\000a  and s.status = 'COMPLETED'\000a  and s.sale_date >= ?\000agroup by to_char(s.sale_date, 'YYYY-MM-DD')\000aorder by bucket asc\000a"; expected "identifier"; SQL statement:
+select to_char(s.sale_date, 'YYYY-MM-DD') as bucket,
+       sum(s.total) as value,
+       sum(s.total - coalesce(s.cost_of_goods, 0)) as secondary,
+       count(*) as count
+from sales s
+where s.tenant_id = ? and s.deleted = false
+  and s.status = 'COMPLETED'
+  and s.sale_date >= ?
+group by to_char(s.sale_date, 'YYYY-MM-DD')
+order by bucket asc
+ [42001-232]] [select to_char(s.sale_date, 'YYYY-MM-DD') as bucket,
+       sum(s.total) as value,
+       sum(s.total - coalesce(s.cost_of_goods, 0)) as secondary,
+       count(*) as count
+from sales s
+where s.tenant_id = ? and s.deleted = false
+  and s.status = 'COMPLETED'
+  and s.sale_date >= ?
+group by to_char(s.sale_date, 'YYYY-MM-DD')
+order by bucket asc
+]; SQL [select to_char(s.sale_date, 'YYYY-MM-DD') as bucket,
+       sum(s.total) as value,
+       sum(s.total - coalesce(s.cost_of_goods, 0)) as secondary,
+       count(*) as count
+from sales s
+where s.tenant_id = ? and s.deleted = false
+  and s.status = 'COMPLETED'
+  and s.sale_date >= ?
+group by to_char(s.sale_date, 'YYYY-MM-DD')
+order by bucket asc
+]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:281) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:256) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:560) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:343) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:160) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:136) ~[spring-data-jpa-3.5.4.jar:3.5.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.11.jar:6.2.11]
+	at jdk.proxy2/jdk.proxy2.$Proxy165.dailyRevenueSeries(Unknown Source) ~[na:na]
+	at com.biashara.analytics.service.DashboardService.build(DashboardService.java:78) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.11.jar:6.2.11]
+	at com.biashara.analytics.service.DashboardService$$SpringCGLIB$$0.build(<generated>) ~[classes/:na]
+	at com.biashara.analytics.web.DashboardController.dashboard(DashboardController.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.proceed(AuthorizationManagerBeforeMethodInterceptor.java:268) ~[spring-security-core-6.5.5.jar:6.5.5]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:263) ~[spring-security-core-6.5.5.jar:6.5.5]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:196) ~[spring-security-core-6.5.5.jar:6.5.5]
+	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44) ~[spring-security-config-6.5.5.jar:6.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.11.jar:6.2.11]
+	at com.biashara.analytics.web.DashboardController$$SpringCGLIB$$0.dashboard(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at com.biashara.iam.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:47) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.5.5.jar:6.5.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319) ~[spring-security-config-6.5.5.jar:6.5.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240) ~[spring-security-config-6.5.5.jar:6.5.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+Caused by: org.hibernate.exception.SQLGrammarException: could not prepare statement [Syntax error in SQL statement "select to_char(s.sale_date, 'YYYY-MM-DD') as bucket,\000a       sum(s.total) as [*]value,\000a       sum(s.total - coalesce(s.cost_of_goods, 0)) as secondary,\000a       count(*) as count\000afrom sales s\000awhere s.tenant_id = ? and s.deleted = false\000a  and s.status = 'COMPLETED'\000a  and s.sale_date >= ?\000agroup by to_char(s.sale_date, 'YYYY-MM-DD')\000aorder by bucket asc\000a"; expected "identifier"; SQL statement:
+select to_char(s.sale_date, 'YYYY-MM-DD') as bucket,
+       sum(s.total) as value,
+       sum(s.total - coalesce(s.cost_of_goods, 0)) as secondary,
+       count(*) as count
+from sales s
+where s.tenant_id = ? and s.deleted = false
+  and s.status = 'COMPLETED'
+  and s.sale_date >= ?
+group by to_char(s.sale_date, 'YYYY-MM-DD')
+order by bucket asc
+ [42001-232]] [select to_char(s.sale_date, 'YYYY-MM-DD') as bucket,
+       sum(s.total) as value,
+       sum(s.total - coalesce(s.cost_of_goods, 0)) as secondary,
+       count(*) as count
+from sales s
+where s.tenant_id = ? and s.deleted = false
+  and s.status = 'COMPLETED'
+  and s.sale_date >= ?
+group by to_char(s.sale_date, 'YYYY-MM-DD')
+order by bucket asc
+]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:66) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:191) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:153) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.sql.exec.internal.StandardStatementCreator.createStatement(StandardStatementCreator.java:49) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:236) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:172) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.sql.results.jdbc.internal.AbstractResultSetAccess.getMetaData(AbstractResultSetAccess.java:36) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.sql.results.jdbc.internal.AbstractResultSetAccess.getColumnCount(AbstractResultSetAccess.java:52) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.query.results.ResultSetMappingImpl.resolve(ResultSetMappingImpl.java:194) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:340) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:137) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:102) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:91) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:165) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:142) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:132) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.query.sql.internal.NativeSelectQueryPlanImpl.performList(NativeSelectQueryPlanImpl.java:135) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.query.sql.internal.NativeQueryImpl.doList(NativeQueryImpl.java:697) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:143) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.query.Query.getResultList(Query.java:120) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:132) ~[spring-data-jpa-3.5.4.jar:3.5.4]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:95) ~[spring-data-jpa-3.5.4.jar:3.5.4]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:160) ~[spring-data-jpa-3.5.4.jar:3.5.4]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:148) ~[spring-data-jpa-3.5.4.jar:3.5.4]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.5.4.jar:3.5.4]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.5.4.jar:3.5.4]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:170) ~[spring-data-commons-3.5.4.jar:3.5.4]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149) ~[spring-data-commons-3.5.4.jar:3.5.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69) ~[spring-data-commons-3.5.4.jar:3.5.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.11.jar:6.2.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.11.jar:6.2.11]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.11.jar:6.2.11]
+	... 136 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select to_char(s.sale_date, 'YYYY-MM-DD') as bucket,\000a       sum(s.total) as [*]value,\000a       sum(s.total - coalesce(s.cost_of_goods, 0)) as secondary,\000a       count(*) as count\000afrom sales s\000awhere s.tenant_id = ? and s.deleted = false\000a  and s.status = 'COMPLETED'\000a  and s.sale_date >= ?\000agroup by to_char(s.sale_date, 'YYYY-MM-DD')\000aorder by bucket asc\000a"; expected "identifier"; SQL statement:
+select to_char(s.sale_date, 'YYYY-MM-DD') as bucket,
+       sum(s.total) as value,
+       sum(s.total - coalesce(s.cost_of_goods, 0)) as secondary,
+       count(*) as count
+from sales s
+where s.tenant_id = ? and s.deleted = false
+  and s.status = 'COMPLETED'
+  and s.sale_date >= ?
+group by to_char(s.sale_date, 'YYYY-MM-DD')
+order by bucket asc
+ [42001-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getSyntaxError(DbException.java:261) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.readIdentifier(Parser.java:5527) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseSelectExpressions(Parser.java:2787) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseSelect(Parser.java:2803) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseQueryPrimary(Parser.java:2692) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseQueryTerm(Parser.java:2547) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseQueryExpressionBody(Parser.java:2526) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseQueryExpressionBodyAndEndOfQuery(Parser.java:2519) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseQueryExpression(Parser.java:2512) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseQuery(Parser.java:2479) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parsePrepared(Parser.java:610) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:581) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:556) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.prepareCommand(Parser.java:484) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:687) ~[h2-2.3.232.jar:2.3.232]
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:342) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java) ~[HikariCP-6.3.3.jar:na]
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$4.doPrepare(StatementPreparerImpl.java:151) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:180) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	... 169 common frames omitted
+

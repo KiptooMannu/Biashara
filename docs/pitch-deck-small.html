@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BIASHARA — Small Pitch Deck</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --surface: #0f172a;
+      --surface-2: #14233b;
+      --text: #f8fafc;
+      --muted: #aebccd;
+      --accent: #10b981;
+      --border: rgba(255,255,255,0.12);
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.5; }
+    .slide { min-height: 100vh; padding: 3rem 3rem 4rem; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(135deg, rgba(255,255,255,0.02), transparent 60%), var(--surface); }
+    .kicker { text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.75rem; font-weight: 800; color: var(--accent); margin-bottom: 0.8rem; }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 0.9rem; line-height: 1.1; }
+    h2 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); margin: 0 0 0.8rem; }
+    p, li { color: var(--muted); font-size: 1rem; }
+    .grid { display: grid; gap: 1rem; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.1rem; }
+    .pill { display: inline-block; padding: 0.35rem 0.75rem; margin: 0.25rem 0.35rem 0.25rem 0; border-radius: 999px; border: 1px solid var(--border); color: var(--text); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.01em; }
+    .accent { color: var(--accent); border-color: rgba(16,185,129,0.35); background: rgba(16,185,129,0.12); box-shadow: 0 0 0 1px rgba(16,185,129,0.1) inset; }
+    ul.clean { list-style: none; padding: 0; margin: 0; }
+    ul.clean li { position: relative; padding-left: 1rem; margin-bottom: 0.55rem; }
+    ul.clean li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
+    .hero { max-width: 760px; }
+    .footer { margin-top: 1.25rem; color: var(--muted); font-size: 0.9rem; }
+    @media (max-width: 900px) { .slide { padding: 2rem 1.1rem; } .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <section class="slide">
+    <div class="hero">
+      <div class="kicker">BIASHARA</div>
+      <h1 style="font-size: clamp(2.3rem, 4.4vw, 3.4rem); font-weight: 800; letter-spacing: -0.02em;">Helping small businesses run better with one connected system.</h1>
+      <p style="font-size: 1.06rem; font-weight: 600; color: #dbe7f4;">Most MSMEs are stuck using scattered tools for sales, stock, accounting and customers. The result is slow decisions, hidden losses and too much manual work.</p>
+      <div style="margin-top: 1rem;">
+        <span class="pill accent">90% of businesses</span>
+        <span class="pill accent">50%+ of jobs</span>
+        <span class="pill accent">Trillions financing gap</span>
+        <span class="pill accent">World Bank source</span>
+      </div>
+      <p class="footer">These figures come from World Bank SME finance research: SMEs make up around 90% of all businesses and account for more than half of global employment.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">The main problem</div>
+    <h2 style="font-size: clamp(1.45rem, 2.7vw, 2rem); font-weight: 800; letter-spacing: -0.01em;">MSMEs need software that is affordable, practical and built for daily operations.</h2>
+    <div class="grid grid-3" style="margin-top: 1rem;">
+      <div class="card">
+        <h3>Fragmented tools</h3>
+        <p>SMEs often manage stock, sales, cash flow and customers across disconnected tools or spreadsheets, making coordination harder than it should be.</p>
+      </div>
+      <div class="card">
+        <h3>Slow decisions</h3>
+        <p>When owners cannot see the full picture quickly, growth slows and everyday decisions around stock, hiring and spending become reactive.</p>
+      </div>
+      <div class="card">
+        <h3>Hidden losses</h3>
+        <p>In emerging markets and developing economies, the financing gap leaves many businesses unable to invest, expand or protect margins when disruptions hit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">The solution</div>
+    <h2 style="font-size: clamp(1.45rem, 2.7vw, 2rem); font-weight: 800; letter-spacing: -0.01em;">One platform for everyday business operations.</h2>
+    <div class="grid grid-2" style="margin-top: 1rem;">
+      <div class="card">
+        <h3>What it covers</h3>
+        <ul class="clean">
+          <li>Inventory and stock movement</li>
+          <li>POS and sales workflow</li>
+          <li>CRM and customer tracking</li>
+          <li>Procurement and suppliers</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Why it stands out</h3>
+        <ul class="clean">
+          <li>Finance, payroll and reporting in one place</li>
+          <li>Role-based access and audit controls</li>
+          <li>AI assistant that explains the numbers with evidence</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">How it works</div>
+    <h2 style="font-size: clamp(1.45rem, 2.7vw, 2rem); font-weight: 800; letter-spacing: -0.01em;">From a transaction to a decision in one flow.</h2>
+    <div class="grid grid-3" style="margin-top: 1rem;">
+      <div class="card">
+        <h3>Capture</h3>
+        <p>A sale, purchase, expense or customer interaction is recorded once and immediately connected to the rest of the system.</p>
+      </div>
+      <div class="card">
+        <h3>Connect</h3>
+        <p>Inventory, cash flow, customer activity and reporting are updated together so the business sees a consistent picture.</p>
+      </div>
+      <div class="card">
+        <h3>Act</h3>
+        <p>The owner can respond faster with evidence-backed guidance instead of waiting for manual analysis and spreadsheets.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Why it matters</div>
+    <h2 style="font-size: clamp(1.45rem, 2.7vw, 2rem); font-weight: 800; letter-spacing: -0.01em;">It turns operations from reactive to proactive.</h2>
+    <div class="card" style="margin-top: 1rem;">
+      <p>Instead of asking “what happened?”, the business can ask “why is it happening, what is costing us, and what should we do next?”</p>
+      <p style="margin-bottom: 0;">That makes BIASHARA relevant for retail, wholesale and growing SMEs that need better control without enterprise complexity.</p>
+    </div>
+  </section>
+</body>
+</html>

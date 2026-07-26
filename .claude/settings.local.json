@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(java -version)",
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "PowerShell(mvn --version)",
+      "PowerShell(\"---\")",
+      "PowerShell($env:MAVEN_OPTS='--enable-native-access=ALL-UNNAMED'; mvn -f 'c:\\\\Users\\\\User\\\\Desktop\\\\Claude\\\\backend\\\\pom.xml' -q -B compile -DskipTests; \"EXIT=$LASTEXITCODE\")",
+      "PowerShell(mvn -f 'c:\\\\Users\\\\User\\\\Desktop\\\\Claude\\\\backend\\\\pom.xml' -B compile -DskipTests 2>&1 | Select-String -Pattern 'BUILD|ERROR|Downloading spring-boot-starter-parent|Total time' | Select-Object -First 20; \"EXIT=$LASTEXITCODE\")",
+      "PowerShell(Test-NetConnection -ComputerName 'ep-ancient-firefly-ayi4knqn-pooler.c-5.us-east-2.aws.neon.tech' -Port 5432 -InformationLevel Quiet -WarningAction SilentlyContinue)",
+      "PowerShell(mvn -f 'c:\\\\Users\\\\User\\\\Desktop\\\\Claude\\\\backend\\\\pom.xml' -B clean compile -DskipTests > 'c:\\\\Users\\\\User\\\\Desktop\\\\Claude\\\\backend\\\\build.log' 2>&1; \"EXIT=$LASTEXITCODE\"; Get-Content 'c:\\\\Users\\\\User\\\\Desktop\\\\Claude\\\\backend\\\\build.log' | Select-String -Pattern 'BUILD|Compiling|ERROR' | Select-Object -First 15)",
+      "PowerShell(mvn -f 'c:\\\\Users\\\\User\\\\Desktop\\\\Claude\\\\backend\\\\pom.xml' -B clean compile -DskipTests > 'c:\\\\Users\\\\User\\\\Desktop\\\\Claude\\\\backend\\\\build.log' 2>&1; \"EXIT=$LASTEXITCODE\"; Get-Content 'c:\\\\Users\\\\User\\\\Desktop\\\\Claude\\\\backend\\\\build.log' | Select-String -Pattern 'BUILD|Compiling|cannot find|ERROR\\\\]' | Select-Object -First 12)",
+      "PowerShell(mvn -f 'c:\\\\Users\\\\User\\\\Desktop\\\\Claude\\\\backend\\\\pom.xml' -B compile -DskipTests > 'c:\\\\Users\\\\User\\\\Desktop\\\\Claude\\\\backend\\\\build.log' 2>&1; \"EXIT=$LASTEXITCODE\"; Get-Content 'c:\\\\Users\\\\User\\\\Desktop\\\\Claude\\\\backend\\\\build.log' | Select-String -Pattern 'BUILD|Compiling|cannot find|symbol:|ERROR\\\\]' | Select-Object -First 15)",
+      "PowerShell(Get-Process java -ErrorAction SilentlyContinue | Select-Object Id, StartTime | Format-Table -AutoSize; \"--- port 8080 ---\"; \\(Get-NetTCPConnection -LocalPort 8080 -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1 OwningProcess\\); \"--- log tail ---\"; Get-Content 'c:\\\\Users\\\\User\\\\Desktop\\\\Claude\\\\backend\\\\seed-run.log' | Select-Object -Last 5)",
+      "PowerShell(Get-Process java -ErrorAction SilentlyContinue | Stop-Process -Force; Start-Sleep -Milliseconds 1500; \"java stopped\"; \\(Get-NetTCPConnection -LocalPort 8080 -State Listen -ErrorAction SilentlyContinue | Measure-Object\\).Count)",
+      "PowerShell(Get-Process java -ErrorAction SilentlyContinue)",
+      "PowerShell(\"--- java ---\")"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+package com.biashara.common.enums;
+
+public enum InsightType {
+    SALES_DROP,
+    SALES_SPIKE,
+    STOCKOUT_PREDICTION,
+    REORDER_SUGGESTION,
+    CASH_FLOW_WARNING,
+    CHURN_RISK,
+    FRAUD_ALERT,
+    SUPPLIER_RECOMMENDATION,
+    BUSINESS_HEALTH,
+    GOAL_PROGRESS,
+    TOP_PRODUCT,
+    DEAD_STOCK,
+    EXPENSE_ANOMALY,
+    MARKET_BASKET
+}

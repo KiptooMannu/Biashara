@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BIASHARA — Detailed Pitch Deck</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --surface: #0f172a;
+      --surface-2: #14233b;
+      --text: #f8fafc;
+      --muted: #9fb0c5;
+      --accent: #10b981;
+      --accent-2: #3b82f6;
+      --warn: #f59e0b;
+      --danger: #fb7185;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 18px 45px rgba(0,0,0,0.24);
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: var(--font); background: var(--bg); color: var(--text);
+      line-height: 1.55; -webkit-font-smoothing: antialiased;
+    }
+    .deck { position: relative; }
+    .slide {
+      display: none; min-height: 100vh; padding: 3.5rem 4rem 5rem; background: linear-gradient(135deg, rgba(255,255,255,0.02), transparent 60%), var(--surface);
+    }
+    .slide.active { display: block; }
+    .kicker {
+      text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.75rem; font-weight: 800;
+      color: var(--accent); margin: 0 0 0.75rem;
+    }
+    h1 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); margin: 0 0 1rem; line-height: 1.08; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); margin: 0 0 0.9rem; line-height: 1.14; }
+    h3 { font-size: 1rem; margin: 0 0 0.35rem; }
+    p, li { color: var(--muted); font-size: 1rem; }
+    .lede { font-size: 1.1rem; max-width: 70ch; }
+    .grid { display: grid; gap: 1rem; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card {
+      background: var(--surface-2); border: 1px solid var(--border); border-radius: 16px;
+      padding: 1rem 1.1rem; box-shadow: var(--shadow);
+    }
+    .pill {
+      display: inline-block; padding: 0.28rem 0.6rem; border-radius: 999px; border: 1px solid var(--border);
+      color: var(--text); font-size: 0.8rem; margin: 0.25rem 0.35rem 0.25rem 0;
+      background: rgba(255,255,255,0.04);
+    }
+    .pill.accent { border-color: rgba(16,185,129,0.35); color: var(--accent); }
+    .pill.blue { border-color: rgba(59,130,246,0.35); color: #8ec5ff; }
+    .pill.warn { border-color: rgba(245,158,11,0.35); color: var(--warn); }
+    .stat {
+      background: var(--surface-2); border: 1px solid var(--border); border-radius: 14px; padding: 1rem;
+      box-shadow: var(--shadow);
+    }
+    .stat .value { font-size: 1.8rem; font-weight: 800; margin-top: 0.25rem; }
+    .stat .label { color: var(--muted); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.14em; }
+    .hero { display: grid; gap: 2rem; align-items: center; min-height: calc(100vh - 8rem); }
+    .hero .title-row { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.3rem; }
+    .brand-badge {
+      width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #03111a;
+      box-shadow: 0 8px 20px rgba(16,185,129,0.25);
+    }
+    ul.clean { list-style: none; padding: 0; margin: 0; }
+    ul.clean li { padding-left: 1.1rem; position: relative; margin-bottom: 0.6rem; }
+    ul.clean li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
+    .quote { border-left: 3px solid var(--accent); padding-left: 1rem; }
+    .footer-note { margin-top: 2rem; color: var(--muted); font-size: 0.9rem; }
+    .nav {
+      position: fixed; right: 1.4rem; bottom: 1.2rem; z-index: 50; display: flex; align-items: center; gap: 0.65rem;
+      background: rgba(15,23,42,0.92); border: 1px solid var(--border); border-radius: 999px; padding: 0.45rem 0.65rem;
+    }
+    .nav button { border: none; background: var(--surface-2); color: var(--text); width: 32px; height: 32px; border-radius: 50%; cursor: pointer; }
+    .nav .count { font-size: 0.85rem; color: var(--muted); margin: 0 0.2rem; }
+    .progress { position: fixed; left: 0; bottom: 0; height: 3px; background: var(--accent); transition: width 0.2s ease; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92rem; }
+    .tiny { font-size: 0.82rem; }
+    @media (max-width: 900px) {
+      .slide { padding: 2.2rem 1.1rem 4rem; }
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .hero { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <div class="nav">
+    <button id="prev" aria-label="Previous">←</button>
+    <span class="count" id="count">1 / 11</span>
+    <button id="next" aria-label="Next">→</button>
+  </div>
+
+  <div class="deck">
+    <section class="slide active">
+      <div class="hero">
+        <div>
+          <div class="title-row">
+            <div class="brand-badge">B</div>
+            <div>
+              <div class="kicker">AI-powered multi-tenant ERP</div>
+              <h1>Stop reporting what happened.<br><span style="color: var(--accent);">Start guiding what happens next.</span></h1>
+            </div>
+          </div>
+          <p class="lede">BIASHARA is a full operating system for micro, small and medium businesses — inventory, POS, CRM, procurement, finance, HR, assets, projects and analytics in one product, with an assistant that explains the business in plain language and shows the evidence behind every answer.</p>
+          <div style="margin-top: 1rem;">
+            <span class="pill accent">Spring Boot 3.5</span>
+            <span class="pill blue">React + TypeScript</span>
+            <span class="pill">PostgreSQL / Neon</span>
+            <span class="pill">63-permission RBAC</span>
+            <span class="pill warn">Verified demo data</span>
+          </div>
+          <p class="footer-note">Built as a modular monolith with the seams already drawn for future service extraction.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">The problem</p>
+      <h2>MSMEs are underserved by software that is either too basic or too expensive.</h2>
+      <div class="grid grid-3" style="margin-top: 1.2rem;">
+        <div class="card">
+          <h3>Fragmented tools</h3>
+          <p>Stock, till, books, customers and suppliers live in different places. A simple business question turns into a spreadsheet exercise.</p>
+        </div>
+        <div class="card">
+          <h3>Reports, not decisions</h3>
+          <p>Most products tell an owner what happened. Very few tell them why it happened, what it cost, and what should happen next.</p>
+        </div>
+        <div class="card">
+          <h3>Middle of the market is empty</h3>
+          <p>Spreadsheets are too manual and enterprise suites are too heavy, costly and slow to implement.</p>
+        </div>
+      </div>
+      <div class="card quote" style="margin-top: 1rem;">
+        <p style="margin: 0;">The real pain is not data entry. It is the gap between a transaction and an action. A missed stockout, a delayed payment, or a slow-moving SKU all create hidden losses that no current tool makes obvious.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">What we’ve covered</p>
+      <h2>A complete operating platform for a modern retail and services business.</h2>
+      <div class="grid grid-4" style="margin-top: 1rem;">
+        <div class="card">
+          <h3>Operations</h3>
+          <ul class="clean">
+            <li>Inventory and stock movements</li>
+            <li>POS and checkout flow</li>
+            <li>Sales and invoice handling</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Commercial</h3>
+          <ul class="clean">
+            <li>CRM and customer lifecycle</li>
+            <li>Supplier and procurement workflow</li>
+            <li>Reorder and stockout recommendations</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Finance</h3>
+          <ul class="clean">
+            <li>Expenses and payments</li>
+            <li>Receivables and invoicing</li>
+            <li>Double-entry ledger and P&amp;L</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>People & governance</h3>
+          <ul class="clean">
+            <li>HR, payroll and leave</li>
+            <li>Assets and projects</li>
+            <li>Audit trail and RBAC</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">The product is not just feature-complete; it is internally coherent. A sale updates stock, ledger, customer points and audit activity in one transaction.</p>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">Product scope</p>
+      <h2>Built modules, each tied to a real operational need.</h2>
+      <div class="grid grid-2" style="margin-top: 1rem;">
+        <div class="card">
+          <h3>Inventory, procurement and sales</h3>
+          <p>Real stock movement history, stockout prediction, dead-stock detection, supplier reliability scoring, purchase order logic and a working POS experience.</p>
+        </div>
+        <div class="card">
+          <h3>Finance and accounting</h3>
+          <p>Expenses, invoices, payments, receivables, journal entries, P&amp;L and a trial balance view. Every financial event is traceable back to the transaction that created it.</p>
+        </div>
+        <div class="card">
+          <h3>HR and operations</h3>
+          <p>Employees, attendance, leave, payroll and statutory deductions. This is the layer that turns a retail tool into an actual business system.</p>
+        </div>
+        <div class="card">
+          <h3>Intelligence and governance</h3>
+          <p>Dashboards, KPI deltas, business health scoring, ABC analysis, AI insights and a full audit trail. The owner sees the story behind the data.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">Differentiator</p>
+      <h2>The AI assistant is grounded in live business data.</h2>
+      <div class="grid grid-2" style="margin-top: 0.9rem;">
+        <div class="card">
+          <h3>What it does</h3>
+          <ul class="clean">
+            <li>Classifies the user’s business question by intent</li>
+            <li>Runs the right analytics queries against the live database</li>
+            <li>Composes an answer from those numbers and shows the evidence behind it</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Why it matters</h3>
+          <p>Instead of producing a generic summary, the assistant can say, “gross profit is up, expenses rose, and stock availability is the short-term risk.” That is usable advice, not language-model fluff.</p>
+        </div>
+      </div>
+      <div class="card quote" style="margin-top: 1rem;">
+        <p style="margin: 0;">The assistant is intentionally not a black-box LLM. It is built to be auditable: every answer returns the figures used and the query source, so a business owner can verify the recommendation before acting.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">Architecture</p>
+      <h2>Designed as a modular monolith with the boundaries already drawn.</h2>
+      <div class="grid grid-2" style="margin-top: 1rem;">
+        <div class="card">
+          <h3>Backend</h3>
+          <p class="mono">Spring Boot 3.5, Java 21 bytecode on JDK 25, Spring Security, Spring Data JPA, Hibernate 6.6.</p>
+        </div>
+        <div class="card">
+          <h3>Frontend</h3>
+          <p class="mono">React 18, TypeScript, Vite 6, Tailwind CSS and shadcn/ui components.</p>
+        </div>
+        <div class="card">
+          <h3>Data layer</h3>
+          <p class="mono">Neon serverless PostgreSQL with shared-schema multi-tenancy and tenant-aware entities.</p>
+        </div>
+        <div class="card">
+          <h3>Execution model</h3>
+          <p>Bounded contexts are packaged separately under the application, so the future split into services is a lift, not a rewrite.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">Security and trust</p>
+      <h2>Permission-based access control is enforced, not just styled.</h2>
+      <div class="grid grid-2" style="margin-top: 1rem;">
+        <div class="card">
+          <h3>Authorization model</h3>
+          <ul class="clean">
+            <li>63 permissions in a catalogue</li>
+            <li>Roles are database-defined bundles of permissions</li>
+            <li>Endpoints enforce their own authority checks</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What that means in practice</h3>
+          <ul class="clean">
+            <li>A cashier sees a reduced UI and is still denied finance routes</li>
+            <li>An HR manager cannot create a Business Owner</li>
+            <li>A role can be created at runtime without a redeploy</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="margin-top: 1rem;">
+        <p style="margin: 0;">The product also includes audit trail, sign-in history, forced password changes for first-login users and secure token handling with refresh rotation.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">Verified evidence</p>
+      <h2>It was not only built — it was exercised against the running system.</h2>
+      <div class="grid grid-4" style="margin-top: 1rem;">
+        <div class="stat">
+          <div class="label">REST endpoints</div>
+          <div class="value">65 / 65</div>
+        </div>
+        <div class="stat">
+          <div class="label">Tracked tables</div>
+          <div class="value">27 / 27</div>
+        </div>
+        <div class="stat">
+          <div class="label">Backend source files</div>
+          <div class="value">163</div>
+        </div>
+        <div class="stat">
+          <div class="label">Frontend errors</div>
+          <div class="value">0</div>
+        </div>
+      </div>
+      <div class="grid grid-2" style="margin-top: 1rem;">
+        <div class="card">
+          <h3>Demo business</h3>
+          <p>GreenMart Supermarket is seeded with realistic data for 10 branches, 22 customers, 55 products, suppliers, employees, expenses, invoices and payroll activity.</p>
+        </div>
+        <div class="card">
+          <h3>Transaction integrity</h3>
+          <p>A POS sale was validated end to end: stock moved, the movement ledger updated, the invoice was recorded and the audit trail captured the event.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">Why this matters</p>
+      <h2>The value is not just software. It is speed, control and decision quality.</h2>
+      <div class="grid grid-3" style="margin-top: 1rem;">
+        <div class="card">
+          <h3>For the owner</h3>
+          <p>Gets a real-time operational picture, not a report that arrives after the fact.</p>
+        </div>
+        <div class="card">
+          <h3>For the team</h3>
+          <p>Cashiers, managers and finance staff operate in the same system with the right boundaries.</p>
+        </div>
+        <div class="card">
+          <h3>For the business</h3>
+          <p>Less stock loss, better collections, fewer reporting gaps and safer growth.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top: 1rem;">
+        <p style="margin: 0;">This is why the product is compelling: it is not a feature list, it is an operating layer that makes daily decisions measurable and repeatable.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">Roadmap</p>
+      <h2>The next steps turn this from a strong prototype into a deployable product.</h2>
+      <div class="grid grid-2" style="margin-top: 1rem;">
+        <div class="card">
+          <h3>Immediate</h3>
+          <ul class="clean">
+            <li>Real communication channels: email, SMS and payment gateway hooks</li>
+            <li>Versioned migrations and CI/CD stability</li>
+            <li>Offline-first POS support for intermittent connectivity</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Medium term</h3>
+          <ul class="clean">
+            <li>Spring AI integration while preserving the grounded query layer</li>
+            <li>Self-serve tenant onboarding and billing</li>
+            <li>Open APIs for integrations and partner channels</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="kicker">Closing</p>
+      <h2>BIASHARA is already a credible business operating system for the market it targets.</h2>
+      <div class="card" style="margin-top: 1rem;">
+        <p style="margin: 0 0 0.6rem;">It combines core ERP capabilities, practical security, real multi-tenant behavior and an AI layer that is useful because it is grounded. That makes it both technically credible and commercially meaningful.</p>
+        <p class="mono">Next step: turn this into a polished demo, expand the onboarding path, and prepare the go-to-market story around retail, wholesalers and multi-branch SMEs.</p>
+      </div>
+      <div class="footer-note">Demo app: http://localhost:5173 · Swagger: http://localhost:8080/swagger-ui.html</div>
+    </section>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    let index = 0;
+    const count = document.getElementById('count');
+    const progress = document.getElementById('progress');
+
+    function show(next) {
+      index = Math.max(0, Math.min(slides.length - 1, next));
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      count.textContent = `${index + 1} / ${slides.length}`;
+      progress.style.width = `${((index + 1) / slides.length) * 100}%`;
+      window.scrollTo(0, 0);
+    }
+
+    document.getElementById('next').onclick = () => show(index + 1);
+    document.getElementById('prev').onclick = () => show(index - 1);
+    document.addEventListener('keydown', (event) => {
+      if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); show(index + 1); }
+      if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); show(index - 1); }
+    });
+
+    show(0);
+  </script>
+</body>
+</html>

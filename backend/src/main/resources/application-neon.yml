@@ -1,0 +1,23 @@
+# Neon serverless Postgres.
+#
+# Credentials default to the hackathon project's values but every one of them can
+# be overridden by an environment variable, so nothing has to change to deploy.
+# NOTE: rotate this password in the Neon console once the demo is over.
+spring:
+  datasource:
+    # prepareThreshold=0 disables server-side prepared statements. Neon's pooler
+    # multiplexes client connections onto shared server ones and caches statement
+    # plans against them, so after any schema change a cached plan raises
+    # "cached plan must not change result type". Disabling them avoids that class
+    # of failure entirely, at a small cost in per-statement planning.
+    url: ${BIASHARA_DB_URL:jdbc:postgresql://ep-ancient-firefly-ayi4knqn-pooler.c-5.us-east-2.aws.neon.tech/neondb?sslmode=require&prepareThreshold=0}
+    username: ${BIASHARA_DB_USER:neondb_owner}
+    password: ${BIASHARA_DB_PASSWORD:npg_yOu5dAVKIiG8}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      # Neon scales to zero when idle; allow generous time for a cold start.
+      connection-timeout: 60000
+      idle-timeout: 300000
+      max-lifetime: 900000
