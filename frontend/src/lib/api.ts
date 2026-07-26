@@ -3,6 +3,7 @@ import type { ApiErrorBody, LoginResponse } from './types'
 
 const ACCESS_TOKEN_KEY = 'biashara.accessToken'
 const REFRESH_TOKEN_KEY = 'biashara.refreshToken'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://biashara-zl2z.onrender.com/api'
 
 export const tokenStore = {
   access: () => localStorage.getItem(ACCESS_TOKEN_KEY),
@@ -18,7 +19,7 @@ export const tokenStore = {
 }
 
 export const api = axios.create({
-  baseURL: '/api',
+  baseURL: API_BASE_URL,
   headers: { 'Content-Type': 'application/json' },
 })
 
@@ -44,7 +45,7 @@ async function refreshAccessToken(): Promise<string> {
   if (!refreshToken) {
     throw new Error('No refresh token')
   }
-  const { data } = await axios.post<LoginResponse>('/api/auth/refresh', { refreshToken })
+  const { data } = await axios.post<LoginResponse>(`${API_BASE_URL}/auth/refresh`, { refreshToken })
   tokenStore.set(data.accessToken, data.refreshToken)
   return data.accessToken
 }
