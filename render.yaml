@@ -49,6 +49,6 @@ services:
       - key: BIASHARA_SEED_ENABLED
         value: "false"
 
-      # Increased memory settings for Supabase performance and caching
+      # Optimized memory settings for stability
       - key: JAVA_OPTS
-        value: "-XX:MaxRAMPercentage=85 -XX:InitialRAMPercentage=50 -XX:+ExitOnOutOfMemoryError -Xms512m -Xmx1024m"
+        value: "-XX:MaxRAMPercentage=70 -XX:InitialRAMPercentage=30 -XX:+ExitOnOutOfMemoryError -Xms256m -Xmx768m -XX:+UseG1GC"

@@ -23,31 +23,31 @@ public class CacheConfig {
     public CacheManager cacheManager() {
         CaffeineCacheManager cacheManager = new CaffeineCacheManager();
         
-        // Configure cache for dashboard data (5-minute TTL)
+        // Configure cache for dashboard data (5-minute TTL) - reduced size for memory
         cacheManager.registerCustomCache("dashboard", Caffeine.newBuilder()
                 .expireAfterWrite(5, TimeUnit.MINUTES)
+                .maximumSize(20)
+                .recordStats()
+                .build());
+        
+        // Configure cache for KPI calculations (2-minute TTL) - reduced size for memory
+        cacheManager.registerCustomCache("kpi", Caffeine.newBuilder()
+                .expireAfterWrite(2, TimeUnit.MINUTES)
+                .maximumSize(50)
+                .recordStats()
+                .build());
+        
+        // Configure cache for user permissions (10-minute TTL) - reduced size for memory
+        cacheManager.registerCustomCache("permissions", Caffeine.newBuilder()
+                .expireAfterWrite(10, TimeUnit.MINUTES)
                 .maximumSize(100)
                 .recordStats()
                 .build());
         
-        // Configure cache for KPI calculations (2-minute TTL)
-        cacheManager.registerCustomCache("kpi", Caffeine.newBuilder()
-                .expireAfterWrite(2, TimeUnit.MINUTES)
-                .maximumSize(500)
-                .recordStats()
-                .build());
-        
-        // Configure cache for user permissions (10-minute TTL)
-        cacheManager.registerCustomCache("permissions", Caffeine.newBuilder()
-                .expireAfterWrite(10, TimeUnit.MINUTES)
-                .maximumSize(1000)
-                .recordStats()
-                .build());
-        
-        // Configure cache for product data (3-minute TTL)
+        // Configure cache for product data (3-minute TTL) - reduced size for memory
         cacheManager.registerCustomCache("products", Caffeine.newBuilder()
                 .expireAfterWrite(3, TimeUnit.MINUTES)
-                .maximumSize(200)
+                .maximumSize(50)
                 .recordStats()
                 .build());
         
