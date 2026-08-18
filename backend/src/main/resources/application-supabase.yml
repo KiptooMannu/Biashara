@@ -1,0 +1,21 @@
+# Supabase PostgreSQL Configuration
+#
+# Uses Supabase's transaction pooler endpoint for optimal connection pooling.
+# Credentials can be overridden via environment variables.
+
+spring:
+  datasource:
+    # Use Supabase Transaction Pooler for better connection efficiency
+    # Direct connection (port 5432) for migrations and admin tasks only
+    url: ${BIASHARA_DB_URL:jdbc:postgresql://aws-0-eu-north-1.pooler.supabase.com:6543/postgres?sslmode=require}
+    username: ${BIASHARA_DB_USER:postgres.kdwjmcqiavdwnjigelsn}
+    password: ${BIASHARA_DB_PASSWORD:Mannu005!Mannu005}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      # Optimized for Supabase transaction pooler
+      maximum-pool-size: 10
+      minimum-idle: 2
+      # Supabase typically responds faster than Neon
+      connection-timeout: 20000
+      idle-timeout: 300000
+      max-lifetime: 900000

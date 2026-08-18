@@ -2,14 +2,14 @@ spring:
   application:
     name: biashara-erp
 
-  # Neon serverless Postgres by default; override with SPRING_PROFILES_ACTIVE=h2
-  # to run fully offline against a local file-backed database.
+  # Supabase PostgreSQL by default; override with SPRING_PROFILES_ACTIVE=neon or h2
+  # to run against Neon or use local file-backed database.
   profiles:
-    active: ${SPRING_PROFILES_ACTIVE:neon}
+    active: ${SPRING_PROFILES_ACTIVE:supabase}
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     open-in-view: false
     properties:
       hibernate:
@@ -65,7 +65,7 @@ biashara:
   seed:
     # Set to false once a deployed environment has been seeded, so a restart is
     # not spent re-walking 27 tables to conclude they are already populated.
-    enabled: ${BIASHARA_SEED_ENABLED:true}
+    enabled: ${BIASHARA_SEED_ENABLED:false}
   cors:
     # Comma-separated origin patterns. The deployed frontend lives on a
     # different host to the API, so this has to be set at deploy time —

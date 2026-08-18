@@ -22,7 +22,11 @@ import com.biashara.sales.dto.SalesDtos;
 import com.biashara.sales.repository.SaleItemRepository;
 import com.biashara.sales.repository.SaleRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,6 +44,7 @@ import java.util.List;
  * direction is not information. Aggregation happens in the database rather than by
  * loading rows and looping in Java.
  */
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class DashboardService {
@@ -58,6 +63,7 @@ public class DashboardService {
     private final AiInsightRepository insightRepository;
     private final BusinessHealthService healthService;
 
+    @Cacheable(value = "dashboard", key = "#tenantId + '-' + #userId + '-' + #permissions.hashCode()", unless = "#result == null")
     @Transactional(readOnly = true)
     public AnalyticsDtos.DashboardResponse build(Long tenantId, Long userId, List<String> permissions) {
         Tenant tenant = tenantRepository.findById(tenantId)
@@ -251,5 +257,32 @@ public class DashboardService {
                         customer.getTotalSpent(),
                         customer.getTotalOrders() == null ? 0L : customer.getTotalOrders().longValue()))
                 .toList();
+    }
+
+    /**
+     * Evicts dashboard cache for a specific tenant when data changes.
+     * Call this method after sales, expenses, or other dashboard-impacting operations.
+     */
+    @CacheEvict(value = "dashboard", key = "#tenantId + '*'")
+    public void evictDashboardCache(Long tenantId) {
+        log.info("Evicted dashboard cache for tenant: {}", tenantId);
+    }
+
+    /**
+     * Evicts all dashboard caches periodically to ensure data freshness.
+     * Runs every 5 minutes.
+     */
+    @CacheEvict(value = "dashboard", allEntries = true)
+    @Scheduled(fixedRate = 300000)
+    public void evictAllDashboardCaches() {
+        log.info("Evicted all dashboard caches for periodic refresh");
+    }
+
+    /**
+     * Evicts KPI cache for a specific tenant.
+     */
+    @CacheEvict(value = "kpi", key = "#tenantId + '*'")
+    public void evictKpiCache(Long tenantId) {
+        log.info("Evicted KPI cache for tenant: {}", tenantId);
     }
 }

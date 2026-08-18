@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * BIASHARA - AI-powered multi-tenant ERP for MSMEs.
@@ -17,6 +18,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @SpringBootApplication
 @EnableJpaAuditing
 @EnableAsync
+@EnableScheduling
 public class BiasharaApplication {
 
     public static void main(String[] args) {
