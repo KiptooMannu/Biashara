@@ -88,7 +88,7 @@ export function errorMessage(error: unknown, fallback = 'Something went wrong'):
     }
     if (body?.message) return body.message
     if (error.code === 'ERR_NETWORK') {
-      return 'Cannot reach the server. Is the backend running on port 8080?'
+      return 'Cannot reach the server. If using a free hosting tier, it might be waking up—please wait a minute and try again.'
     }
   }
   if (error instanceof Error && error.message) return error.message
