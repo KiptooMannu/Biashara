@@ -8,7 +8,7 @@ services:
   - type: web
     name: biashara-api
     runtime: docker
-    plan: free
+    plan: starter  # Upgraded from free to prevent memory issues
     region: oregon
 
     # Build context is backend/, so the Dockerfile's `COPY pom.xml .` resolves.
@@ -23,12 +23,9 @@ services:
 
     envVars:
       - key: SPRING_PROFILES_ACTIVE
-        value: neon
+        value: supabase
 
-      # Neon connection. Keep `sslmode=require&prepareThreshold=0` on the URL:
-      # Neon's pooler caches statement plans across multiplexed connections, and
-      # without prepareThreshold=0 a schema change raises
-      # "cached plan must not change result type".
+      # Supabase connection using transaction pooler for optimal performance
       - key: BIASHARA_DB_URL
         sync: false
       - key: BIASHARA_DB_USER
@@ -50,7 +47,8 @@ services:
 
       # Set to false after the first successful deploy has seeded the database.
       - key: BIASHARA_SEED_ENABLED
-        value: "true"
+        value: "false"
 
+      # Increased memory settings for Supabase performance and caching
       - key: JAVA_OPTS
-        value: "-XX:MaxRAMPercentage=75 -XX:InitialRAMPercentage=40 -XX:+ExitOnOutOfMemoryError"
+        value: "-XX:MaxRAMPercentage=85 -XX:InitialRAMPercentage=50 -XX:+ExitOnOutOfMemoryError -Xms512m -Xmx1024m"

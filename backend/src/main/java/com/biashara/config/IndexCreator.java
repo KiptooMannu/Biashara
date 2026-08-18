@@ -102,12 +102,13 @@ public class IndexCreator implements CommandLineRunner {
                 return;
             }
             
-            // Create the index
-            jdbcTemplate.execute(sql);
+            // Create the index (remove CONCURRENTLY for pooler compatibility)
+            String nonConcurrentSql = sql.replace("CREATE INDEX CONCURRENTLY IF NOT EXISTS", "CREATE INDEX IF NOT EXISTS");
+            jdbcTemplate.execute(nonConcurrentSql);
             log.info("Created index: {}", indexName);
             
         } catch (Exception e) {
-            log.warn("Could not create index {}: {}", indexName, e.getMessage());
+            log.warn("Could not create index {}: {} (this is expected with transaction pooler - indexes should be created via direct connection)", indexName, e.getMessage());
             // Continue with other indexes even if one fails
         }
     }
