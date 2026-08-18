@@ -19,3 +19,8 @@ spring:
       connection-timeout: 20000
       idle-timeout: 300000
       max-lifetime: 900000
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
