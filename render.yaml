@@ -49,6 +49,6 @@ services:
       - key: BIASHARA_SEED_ENABLED
         value: "false"
 
-      # Optimized memory settings for stability
+      # Optimized memory settings for free plan stability
       - key: JAVA_OPTS
-        value: "-XX:MaxRAMPercentage=70 -XX:InitialRAMPercentage=30 -XX:+ExitOnOutOfMemoryError -Xms256m -Xmx768m -XX:+UseG1GC"
+        value: "-XX:MaxRAMPercentage=75 -XX:InitialRAMPercentage=40 -XX:+ExitOnOutOfMemoryError -Xms256m -Xmx512m"
